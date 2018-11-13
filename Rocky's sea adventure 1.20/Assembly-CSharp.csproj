@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\MiniMap.cs" />
     <Compile Include="Assets\Scripts\RadialButton.cs" />
     <Compile Include="Assets\Scripts\RadialMenu.cs" />
+    <Compile Include="Assets\Scripts\TestScript.cs" />
     <Compile Include="Assets\Scripts\UpgradeMenuSpawner.cs" />
     <Compile Include="Assets\Scripts\WaveController.cs" />
     <Compile Include="Assets\Sky Box\Farland Skyboxes\Scripts\SkyboxChanger.cs" />
@@ -108,16 +109,16 @@
     <None Include="Assets\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Rocky's sea adventure 1.20/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Hack Turtles/GDDS-Game/Rocky's sea adventure 1.20/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Rocky's sea adventure 1.20/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Hack Turtles/GDDS-Game/Rocky's sea adventure 1.20/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Rocky's sea adventure 1.20/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Hack Turtles/GDDS-Game/Rocky's sea adventure 1.20/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Rocky's sea adventure 1.20/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/sp work/Year 2/GDDS2/Term 2/Hack Turtles/GDDS-Game/Rocky's sea adventure 1.20/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

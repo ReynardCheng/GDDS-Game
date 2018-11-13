@@ -82,8 +82,6 @@ public class BoatMovement : MonoBehaviour
 
 		BoostSlider();
 
-		FloatOnWater();
-
 	}
 
 
@@ -169,11 +167,6 @@ public class BoatMovement : MonoBehaviour
 
 		// to rotate the boat
 		transform.rotation = Quaternion.Euler(-90, currentSteerSpeed, 0);
-	}
-
-	void FloatOnWater()
-	{
-		transform.position = new Vector3(transform.position.x, theWater.transform.position.y + heightAboveWater, transform.position.z);
 	}
 
 	// this next part is for UI

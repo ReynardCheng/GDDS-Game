@@ -670,6 +670,7 @@ MonoBehaviour:
   playerViewPos: {fileID: 89107797}
   shipViewPos: {fileID: 171403344}
   ship: {fileID: 897419857}
+  shipView: 0
   switchSpeed: 0
 --- !u!45 &403963402
 Skybox:
@@ -796,11 +797,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4186935287803544, guid: 7946a8a935974994fbedc430850dfe8b, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.1442065
+      value: 4.14421
       objectReference: {fileID: 0}
     - target: {fileID: 4186935287803544, guid: 7946a8a935974994fbedc430850dfe8b, type: 2}
       propertyPath: m_LocalScale.z
-      value: 4.1442065
+      value: 4.14421
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7946a8a935974994fbedc430850dfe8b, type: 2}

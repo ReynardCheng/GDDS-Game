@@ -7,8 +7,8 @@ public class CameraSwitch : MonoBehaviour {
     public Transform playerViewPos;     //Transform of camera when focused on player
     public Transform shipViewPos;       //Transform of camera when focused on ship
     public GameObject ship;
-    
-    private bool shipView;      //This checks what view camera is in right now (ship/player)
+
+	[SerializeField] private bool shipView;      //This checks what view camera is in right now (ship/player)
     public float switchSpeed;   //How fast the switch will be. The higher the speed, the quicker the switch.
 
     private bool switching;
@@ -29,6 +29,8 @@ public class CameraSwitch : MonoBehaviour {
 	void Update () {
 
 		if (chMovement.canControlShip) CameraSwitching();
+
+		CameraParent();
 	}
 
 	void CameraSwitching()
@@ -52,6 +54,11 @@ public class CameraSwitch : MonoBehaviour {
 		}
 	}
 
+	void CameraParent()
+	{
+		transform.parent = (shipView) ? transform.parent = ship.transform : chMovement.transform;
+	}
+
     IEnumerator SwitchView(Transform view)
     {
         float fractionLerped = 0f;   //Declaring variable for lerping. This is the fraction of how much of the switch is completed.
@@ -70,7 +77,7 @@ public class CameraSwitch : MonoBehaviour {
 		{
 			chMovement.fpsController.controllingShip = false;
 			theBoat.controllingBoat = false;
-			transform.parent = (transform.position == playerViewPos.transform.position) ? transform.parent = chMovement.transform : transform.parent = null;
+			//transform.parent = (transform.position == playerViewPos.transform.position) ? transform.parent = chMovement.transform : transform.parent = null;
 		}
 		if (view == shipViewPos)
 		{

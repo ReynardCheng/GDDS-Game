@@ -1789,6 +1789,10 @@ Prefab:
       propertyPath: m_Name
       value: Sea
       objectReference: {fileID: 0}
+    - target: {fileID: 1605260421538102, guid: 20ab7c25b089dbd4c8e8be1cb913ce68, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ab7c25b089dbd4c8e8be1cb913ce68, type: 2}
   m_IsPrefabAsset: 0

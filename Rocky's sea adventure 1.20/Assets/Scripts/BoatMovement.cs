@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class BoatMovement : MonoBehaviour
 {
 
+	[Header("Health")]
+	[Space]
+	[SerializeField] float health;
+
 	// this is for variables
 	[Header("Variables")]
 	[Space]
@@ -215,7 +219,7 @@ public class BoatMovement : MonoBehaviour
 		transform.localRotation = Quaternion.Euler(floatRotation, currentSteerSpeed, transform.rotation.z);
 
 	}
-	/// 
+
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	// this next part is for UI

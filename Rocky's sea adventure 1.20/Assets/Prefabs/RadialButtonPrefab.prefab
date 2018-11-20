@@ -17,6 +17,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
+  m_Component:
   - component: {fileID: 224813015045276744}
   - component: {fileID: 222028046385598168}
   - component: {fileID: 114168909694507382}

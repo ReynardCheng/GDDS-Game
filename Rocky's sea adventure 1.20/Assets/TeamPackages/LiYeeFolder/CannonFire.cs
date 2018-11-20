@@ -30,13 +30,10 @@ public class CannonFire : MonoBehaviour {
     void Start () {
         EnemiesInRange = new List<GameObject>(); //EnemiesInRange = list of enemy targets in the range of the cannon
         //SphereCollider Range = gameObject.GetComponent<SphereCollider>();
-		transform.parent = null;
-		GameObject myParent = GameObject.FindGameObjectWithTag("Ship");
-		transform.parent = myParent.transform;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         GameObject target = null;
    
@@ -71,8 +68,14 @@ public class CannonFire : MonoBehaviour {
         }
     }
 
+    public void Unparent()
+    {
+        transform.parent = null;
+        GameObject myParent = GameObject.FindGameObjectWithTag("Ship");
+        transform.parent = myParent.transform;
+        //transform.SetParent(myParent.transform, true);
+    }
 
-    
     //void OnTriggerEnter(Collider other) //Add enemy to list of targets when in range of cannon
     //{
     //    if (other.gameObject.tag == "Enemy")
@@ -100,5 +103,21 @@ public class CannonFire : MonoBehaviour {
         projectile.GetComponent<BulletFire>().target = TargetingEnemy; //set the target/path for bullets to fly to in a straight line... will want to edit this later on as bullets act like a moving missile.
         nextAtk = Time.time + atkRate;
     }
+	void OnTriggerEnter(Collider other) //Add enemy to list of targets when in range of cannon
+	{
+		if (other.gameObject.tag == "Enemy")
+		{
+			EnemiesInRange.Add(other.gameObject);
+		}
+	
+	}
 
+	void OnTriggerExit(Collider other) //Remove enemy from target list when it leaves range
+	{
+		if (other.gameObject.tag == "Enemy")
+		{
+			EnemiesInRange.Remove(other.gameObject);
+		}
+		
+	}
 }

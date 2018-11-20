@@ -213,11 +213,11 @@ GameObject:
   - component: {fileID: 4186935287803544}
   - component: {fileID: 33358178401931348}
   - component: {fileID: 23365395268500202}
-  - component: {fileID: 95343500226596902}
   - component: {fileID: 54544056468038892}
   - component: {fileID: 143034926893384370}
   - component: {fileID: 65426057719027372}
   - component: {fileID: 114611645391416458}
+  - component: {fileID: 114839853823275210}
   m_Layer: 0
   m_Name: pirate boat
   m_TagString: Ship
@@ -288,9 +288,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1771526288308386}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 165.76807, y: 165.76807, z: 165.76807}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0, y: 0.022499999, z: 0}
+  m_LocalScale: {x: 4.1442018, y: 4.14421, z: 4.14421}
   m_Children:
   - {fileID: 4864399325354856}
   - {fileID: 4149621481068906}
@@ -307,13 +307,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468854723841934}
-  m_LocalRotation: {x: 0.16224241, y: -0, z: -0, w: 0.98675096}
-  m_LocalPosition: {x: 0, y: 9.380002, z: -18.470003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.16224225, y: 0.0000012881554, z: -0.00000005888665, w: -0.98675096}
+  m_LocalPosition: {x: 0, y: 11.902145, z: -24.28502}
+  m_LocalScale: {x: 0.49999934, y: 0.49999955, z: 0.5000022}
   m_Children: []
   m_Father: {fileID: 4864399325354856}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 18.674002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.175, y: 0, z: 0}
 --- !u!4 &4295825040418202
 Transform:
   m_ObjectHideFlags: 1
@@ -595,7 +595,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &65354775575293474
 BoxCollider:
@@ -681,24 +681,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.49874, y: 1.1029658, z: 3.5800083}
   m_Center: {x: -0.24936998, y: 0.05147871, z: 1.1638864}
---- !u!95 &95343500226596902
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771526288308386}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 8c4ea1b3c334eff43b814c2debd7c960, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114149026690569924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -722,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17587c1cea181f4f94717a9757c52ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   moveSpeed: 0
   maxSpeed: 0
   maxReverseSpeed: 0
@@ -732,10 +715,15 @@ MonoBehaviour:
   boost: 0
   boostUsageRate: 0
   isBoosting: 0
+  floatRotation: 0
+  rotateRate: 0
+  rotateBack: 0
+  heightAboveWater: 0
   controllingBoat: 0
   chController: {fileID: 0}
   theBoat: {fileID: 0}
   boostSlider: {fileID: 0}
+  theWater: {fileID: 0}
 --- !u!114 &114732990826223398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -755,6 +743,18 @@ MonoBehaviour:
   speed: 10
   TargetingEnemy: {fileID: 0}
   EnemiesInRange: []
+--- !u!114 &114839853823275210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771526288308386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a6905fffa5b6f489b4002fe1d5efdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closestVertexIndex: -1
 --- !u!114 &114923056015216826
 MonoBehaviour:
   m_ObjectHideFlags: 1

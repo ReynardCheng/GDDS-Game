@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ClickToUpgrade : MonoBehaviour {
+public class ClickToUpgrade : MonoBehaviour
+{
 
     /// **************
     /// Attach this to all upgradeable cannons to open up an radial menu for player to choose what to do with the cannon
     /// **************
-   
+
+    public Vector3 menuSpawnPosition;
+    public static bool InCannonRange;
+    public static bool menuOpen;
+    public Camera theCamera;
+
     [System.Serializable]
     public class Action
     {
@@ -15,6 +23,7 @@ public class ClickToUpgrade : MonoBehaviour {
         public Color color;
         public Sprite iconSprite;
         public string actionName;
+
     }
 
     /// **************
@@ -23,21 +32,43 @@ public class ClickToUpgrade : MonoBehaviour {
     /// **************
     public Action[] options;
 
-
-
-    void OnMouseDown() //hELP THE MENU DOESNT SPAWN
-    {   
-        //When clicked, access UpgradeMenuSpawner which will then load radial menu prefab
-        UpgradeMenuSpawner.menu.SpawnMenu(this);
-        Debug.Log("Clicked for menu");
+    void Start()
+    {
+        menuSpawnPosition = transform.localPosition;
+        //float xPosition = this.transform.position.x;
+        //float yPosition = this.transform.position.y;
+        //menuSpawnPosition = new Vector3(xPosition, yPosition, 0f);
+        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+        theCamera = camera.GetComponent<Camera>();
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown("space"))
-    //    {
-    //        print("test");
-    //        UpgradeMenuSpawner.menu.SpawnMenu(this);
-    //    }
-    //}
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+
+            InCannonRange = true;
+            print("in range");
+
+        }
+    }
+
+
+    void Update()
+    {
+
+        if (Input.GetKeyDown("space") && InCannonRange == true && !menuOpen)
+        {
+            Vector3 menuSpawnPosition = transform.position;
+
+            UpgradeMenuSpawner.menu.SpawnMenu(this);
+            menuOpen = true;
+            print("Pressed space to open");
+
+        }
+
+
+
+    }
+
 }

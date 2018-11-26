@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeMenuSpawner : MonoBehaviour {
+public class UpgradeMenuSpawner : MonoBehaviour
+{
+
+    /// **************
+    /// Attach this to canvas
+    /// **************
 
     public static UpgradeMenuSpawner menu;
     public RadialMenu menuPrefab;
@@ -16,8 +21,8 @@ public class UpgradeMenuSpawner : MonoBehaviour {
     {
         //Instantiate radial menu prefab
         RadialMenu newMenu = Instantiate(menuPrefab) as RadialMenu;
-        newMenu.transform.SetParent(transform, false);
-        newMenu.transform.position = Input.mousePosition; //spawn the menu where the mouse is
+        newMenu.transform.SetParent(transform, false); //set menu as child of canvas, worldPositionStays is false such that local orientation of object is kept instead of global orientationS
+        newMenu.transform.position = obj.menuSpawnPosition; //spawn the menu where the cannon is
         newMenu.SpawnButtons(obj); //spawn buttons
     }
 }

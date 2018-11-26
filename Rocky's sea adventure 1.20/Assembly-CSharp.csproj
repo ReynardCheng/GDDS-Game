@@ -71,7 +71,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\BoatFloater.cs" />
     <Compile Include="Assets\Scripts\BoatMovement.cs" />
-    <Compile Include="Assets\Scripts\CannonScope.cs" />
+    <Compile Include="Assets\Scripts\BuildCannon.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\ClickToUpgrade.cs" />
     <Compile Include="Assets\Scripts\DetectShipTrigger.cs" />
@@ -81,6 +81,8 @@
     <Compile Include="Assets\Scripts\MiniMap.cs" />
     <Compile Include="Assets\Scripts\RadialButton.cs" />
     <Compile Include="Assets\Scripts\RadialMenu.cs" />
+    <Compile Include="Assets\Scripts\ResourceCount.cs" />
+    <Compile Include="Assets\Scripts\ShipCollectResources.cs" />
     <Compile Include="Assets\Scripts\UpgradeMenuSpawner.cs" />
     <Compile Include="Assets\Scripts\WaveController.cs" />
     <Compile Include="Assets\Sky Box\Farland Skyboxes\Scripts\SkyboxChanger.cs" />

@@ -26,20 +26,27 @@ public class CannonFire : MonoBehaviour {
     public List<GameObject> EnemiesInRange;
 
 
+	//parent
+	public Transform myParent;
+
     // Use this for initialization
     void Start () {
         EnemiesInRange = new List<GameObject>(); //EnemiesInRange = list of enemy targets in the range of the cannon
-        //SphereCollider Range = gameObject.GetComponent<SphereCollider>();
-		transform.parent = null;
-		GameObject myParent = GameObject.FindGameObjectWithTag("Ship");
-		transform.parent = myParent.transform;
-    }
-	
-	// Update is called once per frame
-	void Update () {
+												 //SphereCollider Range = gameObject.GetComponent<SphereCollider>();
+
+		transform.parent = FindObjectOfType<BoatMovement>().transform;
+	}
+
+    // Update is called once per frame
+    void Update () {
 
         GameObject target = null;
-   
+
+		if (transform.parent == null)
+		{
+			Parent();
+		}
+
         var distance = Mathf.Infinity;
         Vector3 position = transform.position;
 
@@ -71,23 +78,29 @@ public class CannonFire : MonoBehaviour {
         }
     }
 
+    public void Parent()
+    {
+       // transform.parent = null;
+      //  GameObject myParent = GameObject.FindGameObjectWithTag("Ship");
+      //  transform.parent = myParent.transform;
+        //transform.SetParent(myParent.transform, true);
+    }
 
-    
-    //void OnTriggerEnter(Collider other) //Add enemy to list of targets when in range of cannon
-    //{
-    //    if (other.gameObject.tag == "Enemy")
-    //    {
-    //        EnemiesInRange.Add(other.gameObject);
-    //    }
-    //}
+    void OnTriggerEnter(Collider other) //Add enemy to list of targets when in range of cannon
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            EnemiesInRange.Add(other.gameObject);
+        }
+    }
 
-    //void OnTriggerExit(Collider other) //Remove enemy from target list when it leaves range
-    //{
-    //    if (other.gameObject.tag == "Enemy")
-    //    {
-    //        EnemiesInRange.Remove(other.gameObject);
-    //    }
-    //}
+    void OnTriggerExit(Collider other) //Remove enemy from target list when it leaves range
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            EnemiesInRange.Remove(other.gameObject);
+        }
+    }
 
     private void Shoot()
     {
